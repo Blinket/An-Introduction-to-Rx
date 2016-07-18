@@ -1,0 +1,16 @@
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\FourStepsImplementObserver.exe.config
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\FourStepsImplementObserver.exe
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\FourStepsImplementObserver.pdb
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\System.Reactive.Core.dll
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\System.Reactive.Interfaces.dll
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\System.Reactive.Linq.dll
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\System.Reactive.Windows.Threading.dll
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\System.Reactive.Core.xml
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\System.Reactive.Interfaces.xml
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\System.Reactive.Linq.xml
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\System.Reactive.PlatformServices.xml
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\bin\Debug\System.Reactive.Windows.Threading.xml
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\obj\Debug\FourStepsObserverLambdas.csprojResolveAssemblyReference.cache
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\obj\Debug\FourStepsImplementObserver.exe
+C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\FourStepsObserverLambdas\FourStepsImplementObserver\obj\Debug\FourStepsImplementObserver.pdb
