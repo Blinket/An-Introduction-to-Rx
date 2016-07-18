@@ -17,3 +17,6 @@ C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\ComposingAndQueryi
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\ComposingAndQueryingEvents\ComposingAndQueryingEvents\obj\Debug\ComposingAndQueryingEvents.csproj.GenerateResource.Cache
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\ComposingAndQueryingEvents\ComposingAndQueryingEvents\obj\Debug\ComposingAndQueryingEvents.exe
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\ComposingAndQueryingEvents\ComposingAndQueryingEvents\obj\Debug\ComposingAndQueryingEvents.pdb
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\ComposingAndQueryingEvents\ComposingAndQueryingEvents\bin\Debug\ComposingAndQueryingEvents.exe.config
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\ComposingAndQueryingEvents\ComposingAndQueryingEvents\obj\Debug\ComposingAndQueryingEvents.exe
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\ComposingAndQueryingEvents\ComposingAndQueryingEvents\obj\Debug\ComposingAndQueryingEvents.pdb
