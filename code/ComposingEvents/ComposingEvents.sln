@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSource", "EventSource\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{EEE9D892-F9A8-4492-AB8D-CB6D0EC15CFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservableNumberGenerator", "ObservableNumberGenerator\ObservableNumberGenerator.csproj", "{4C55B5CB-FB2A-41B6-AF7C-1F0BE05434A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EEE9D892-F9A8-4492-AB8D-CB6D0EC15CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEE9D892-F9A8-4492-AB8D-CB6D0EC15CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEE9D892-F9A8-4492-AB8D-CB6D0EC15CFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C55B5CB-FB2A-41B6-AF7C-1F0BE05434A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C55B5CB-FB2A-41B6-AF7C-1F0BE05434A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C55B5CB-FB2A-41B6-AF7C-1F0BE05434A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C55B5CB-FB2A-41B6-AF7C-1F0BE05434A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

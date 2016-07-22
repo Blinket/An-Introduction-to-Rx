@@ -14,3 +14,6 @@ C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\WaitingForAsyncOpe
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\WaitingForAsyncOperation\WaitingForAsyncOperation\obj\Debug\WaitingForAsyncOperation.csprojResolveAssemblyReference.cache
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\WaitingForAsyncOperation\WaitingForAsyncOperation\obj\Debug\WaitingForAsyncOperation.exe
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\WaitingForAsyncOperation\WaitingForAsyncOperation\obj\Debug\WaitingForAsyncOperation.pdb
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\WaitingForAsyncOperation\WaitingForAsyncOperation\bin\Debug\WaitingForAsyncOperation.exe.config
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\WaitingForAsyncOperation\WaitingForAsyncOperation\obj\Debug\WaitingForAsyncOperation.exe
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\WaitingForAsyncOperation\WaitingForAsyncOperation\obj\Debug\WaitingForAsyncOperation.pdb

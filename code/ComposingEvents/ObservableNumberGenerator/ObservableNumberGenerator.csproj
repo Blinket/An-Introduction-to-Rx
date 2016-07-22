@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EEE9D892-F9A8-4492-AB8D-CB6D0EC15CFF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{4C55B5CB-FB2A-41B6-AF7C-1F0BE05434A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleClient</RootNamespace>
-    <AssemblyName>ConsoleClient</AssemblyName>
+    <RootNamespace>ObservableNumberGenerator</RootNamespace>
+    <AssemblyName>ObservableNumberGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -64,23 +61,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="UpFromScratch\EvenNumberGenerator.cs" />
+    <Compile Include="UpFromScratch\OddNumberGenerator.cs" />
+    <Compile Include="UpFromScratch\RandomNumbers.cs" />
+    <Compile Include="WithBackingField\Cold\EvenNumberGenerator.cs" />
+    <Compile Include="WithBackingField\Cold\OddNumberGenerator.cs" />
+    <Compile Include="WithBackingField\Cold\RandomNumberGenerator.cs" />
+    <Compile Include="Hybrid\EvenNumbers.cs" />
+    <Compile Include="Hybrid\OddNumbers.cs" />
+    <Compile Include="Hybrid\RandomNumbers.cs" />
+    <Compile Include="WithBackingField\Hot\EvenNumberGenerator.cs" />
+    <Compile Include="WithBackingField\Hot\OddNumberGenerator.cs" />
+    <Compile Include="WithBackingField\Hot\RandomNumberGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EventSource\EventSource.csproj">
-      <Project>{e92c1fb5-52ad-49dd-9414-d8e44516cbee}</Project>
-      <Name>EventSource</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ObservableNumberGenerator\ObservableNumberGenerator.csproj">
-      <Project>{4c55b5cb-fb2a-41b6-af7c-1f0be05434a4}</Project>
-      <Name>ObservableNumberGenerator</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

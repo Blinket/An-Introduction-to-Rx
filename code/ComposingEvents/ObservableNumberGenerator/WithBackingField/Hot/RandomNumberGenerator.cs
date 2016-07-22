@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Reactive.Subjects;
 using System.Threading;
+using System.Reactive.Linq;
 
-namespace EventSource
+namespace ObservableNumberGenerator.WithBackingField.Hot
 {
     public class RandomNumberGenerator : IDisposable
     {
@@ -10,9 +12,17 @@ namespace EventSource
         protected int _counter;
         protected int _maxNumbersToGenerate;
 
-        public event Action<int> NumberGenerated;
+        private Subject<int> _numberSubject = new Subject<int>();
 
-        public RandomNumberGenerator(int maxNumbersToGenerate, 
+        public IObservable<int> Numbers
+        {
+            get
+            {
+                return _numberSubject.AsObservable();
+            }
+        }
+
+        public RandomNumberGenerator(int maxNumbersToGenerate,
             int startAfterMilliseconds = 1000, int generateEveryMilliseconds = 1000)
         {
             _maxNumbersToGenerate = maxNumbersToGenerate;
@@ -23,13 +33,24 @@ namespace EventSource
 
         protected void OnNumberGenerated(object o)
         {
-            if (_counter == _maxNumbersToGenerate)
-                _timer.Change(Timeout.Infinite, Timeout.Infinite);
+            try
+            {
+                if (_counter == _maxNumbersToGenerate)
+                {
+                    _timer.Change(Timeout.Infinite, Timeout.Infinite);
+                    _timer.Dispose();
 
-            var n = GenerateNumber();
+                    _numberSubject?.OnCompleted();
+                }
 
-            if (NumberGenerated != null)
-                NumberGenerated(n);
+                var n = GenerateNumber();
+
+                _numberSubject?.OnNext(n);
+            }
+            catch(Exception ex)
+            {
+                _numberSubject?.OnError(ex);
+            }
         }
 
         protected virtual int GenerateNumber()
@@ -39,7 +60,7 @@ namespace EventSource
             return _random.Next();
         }
 
-        
+
         public void Dispose()
         {
             Dispose(true);

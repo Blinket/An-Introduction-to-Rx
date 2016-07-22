@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EEE9D892-F9A8-4492-AB8D-CB6D0EC15CFF}</ProjectGuid>
+    <ProjectGuid>{D3F1843D-5E98-43AD-B79F-07CBECA93D7C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleClient</RootNamespace>
-    <AssemblyName>ConsoleClient</AssemblyName>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -72,13 +72,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EventSource\EventSource.csproj">
-      <Project>{e92c1fb5-52ad-49dd-9414-d8e44516cbee}</Project>
-      <Name>EventSource</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ObservableNumberGenerator\ObservableNumberGenerator.csproj">
-      <Project>{4c55b5cb-fb2a-41b6-af7c-1f0be05434a4}</Project>
-      <Name>ObservableNumberGenerator</Name>
+    <ProjectReference Include="..\SchoolManagementSystem\SchoolManagementSystem.csproj">
+      <Project>{1203b7c0-afd3-4e4e-a357-d121bc7cd0b5}</Project>
+      <Name>SchoolManagementSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -14,3 +14,6 @@ C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\RetryingOperation\
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\RetryingOperation\RetryingOperation\obj\Debug\RetryingOperation.csprojResolveAssemblyReference.cache
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\RetryingOperation\RetryingOperation\obj\Debug\RetryingOperation.exe
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\RetryingOperation\RetryingOperation\obj\Debug\RetryingOperation.pdb
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\RetryingOperation\RetryingOperation\bin\Debug\RetryingOperation.exe.config
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\RetryingOperation\RetryingOperation\obj\Debug\RetryingOperation.exe
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\RetryingOperation\RetryingOperation\obj\Debug\RetryingOperation.pdb

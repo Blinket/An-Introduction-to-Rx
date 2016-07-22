@@ -3,3 +3,8 @@ C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\ComposingEventsUsi
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\ComposingEventsUsingRx\EventSource\obj\Debug\EventSource.csprojResolveAssemblyReference.cache
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\ComposingEventsUsingRx\EventSource\obj\Debug\EventSource.dll
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\ComposingEventsUsingRx\EventSource\obj\Debug\EventSource.pdb
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\ComposingEvents\EventSource\bin\Debug\EventSource.dll
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\ComposingEvents\EventSource\bin\Debug\EventSource.pdb
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\ComposingEvents\EventSource\obj\Debug\EventSource.csprojResolveAssemblyReference.cache
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\ComposingEvents\EventSource\obj\Debug\EventSource.dll
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\ComposingEvents\EventSource\obj\Debug\EventSource.pdb

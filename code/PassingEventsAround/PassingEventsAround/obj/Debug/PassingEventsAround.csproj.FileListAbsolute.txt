@@ -17,3 +17,6 @@ C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\PassingEventsAroun
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\PassingEventsAround\PassingEventsAround\obj\Debug\PassingEventsAround.csproj.GenerateResource.Cache
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\PassingEventsAround\PassingEventsAround\obj\Debug\PassingEventsAround.exe
 C:\Sathyaish\Clients\Conferences\SELA\2016\Rx\code\demo\after\PassingEventsAround\PassingEventsAround\obj\Debug\PassingEventsAround.pdb
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\PassingEventsAround\PassingEventsAround\bin\Debug\PassingEventsAround.exe.config
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\PassingEventsAround\PassingEventsAround\obj\Debug\PassingEventsAround.exe
+C:\Sathyaish\Clients\Conferences\SELA\2016\IntroToRx\code\PassingEventsAround\PassingEventsAround\obj\Debug\PassingEventsAround.pdb
