@@ -20,9 +20,11 @@ namespace Client
                 .Subscribe(PrintStudentAdmittedMessage, 
                 PrintNoMoreStudentsCanBeAdmittedMessage);
 
-            school1.FillWithStudents(102);
-            school2.FillWithStudents(102);
-            school3.FillWithStudents(103);
+            var period = TimeSpan.FromSeconds(1);
+
+            school1.FillWithStudents(1, period);
+            school2.FillWithStudents(2, period);
+            school3.FillWithStudents(3, period);
 
             Console.WriteLine("Press any key to stop observing and to exit the program.");
             Console.ReadKey();
