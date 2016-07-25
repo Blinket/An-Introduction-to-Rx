@@ -12,11 +12,7 @@ namespace ReasoningAboutEvents
     {
         static void Main(string[] args)
         {
-            // ObserveAdmissionsPeriodically();
-
-            // ObserveStudentsAndJoiningGap(TimeSpan.FromSeconds(4));
-
-            ObserveStudentsJoiningWithin(TimeSpan.FromSeconds(2));
+            
         }
 
         static void ObserveStudentsJoiningWithin(TimeSpan timeSpan)
@@ -26,38 +22,15 @@ namespace ReasoningAboutEvents
             var admissionObservable =
                 Observable.FromEventPattern<StudentAdmittedEventArgs>(school, "StudentAdmitted");
 
-            var observable = admissionObservable.TimeInterval()
-                .Scan<TimeInterval<EventPattern<StudentAdmittedEventArgs>>, StudentPair>(null, (previousPair, current) =>
-                {
-                    Debug.Print(string.Format($"Student joined after {current.Interval.TotalSeconds} seconds, timeSpan = {timeSpan.TotalSeconds} seconds"));
-
-                    var pair = new StudentPair();
-
-                    if (previousPair == null)
-                    {
-                        pair.FirstStudent = null;
-                        pair.SecondStudent = current.Value.EventArgs.Student;
-                        pair.IntervalBetweenJoining = current.Interval;
-                        pair.School = current.Value.EventArgs.School;
-
-                        return pair;
-                    }
-
-                    if (current.Interval <= timeSpan)
-                    {
-                        pair.FirstStudent = previousPair.SecondStudent;
-                        pair.SecondStudent = current.Value.EventArgs.Student;
-                        pair.IntervalBetweenJoining = current.Interval;
-                        pair.School = current.Value.EventArgs.School;
-
-                        return pair;
-                    }
-                    else
-                    {
-                        return default(StudentPair);
-                    }
-                })
-                .Where(p => (p != default(StudentPair)) && (p.FirstStudent != null));
+            // TODO: Assign the value to the variable 'observable'
+            // such that it becomes an observable of a pair of students
+            // represented by the class StudentPair, which records
+            // for each student, the reference to the student in its
+            // property SecondStudent, the school which the student joined
+            // the time interval between the student joining and the previous
+            // student joining the same school, and a reference to the previous
+            // student who joined the same school in its property FirstStudent
+            var observable = null;
 
             var subscription = observable.Subscribe(StudentPairValueHandler);
 
@@ -87,8 +60,10 @@ namespace ReasoningAboutEvents
             var admissionObservable =
                 Observable.FromEventPattern<StudentAdmittedEventArgs>(school, "StudentAdmitted");
 
-            var observable = admissionObservable.TimeInterval()
-                .Where(t => t.Interval <= timeSpan);
+            // Assign a value to the variable 'observable' such that it creates an observable
+            // which, if subscribed to, will return each student, the school they joined and 
+            // the time interval after which they joined the school
+            IObservable<TimeInterval<EventPattern<StudentAdmittedEventArgs>>> observable = null;
 
             var subscription = observable.Subscribe(TimeIntervalValueHandler);
 
@@ -126,8 +101,11 @@ namespace ReasoningAboutEvents
             var admissionObservable =
                 Observable.FromEventPattern<StudentAdmittedEventArgs>(school, "StudentAdmitted");
 
-            var observables = admissionObservable.Buffer(TimeSpan.FromSeconds(5))
-                .Select(lst => lst.Select(ep => ep.EventArgs));
+            // Assign a value to the variable 'observable' such that is becomes
+            // an observable that returns a list of StudentAdmittedEventArgs
+            // every 5 seconds. The list should contain all the students that
+            // joined in that 5 second time window.
+            IObservable<IList<StudentAdmittedEventArgs>> observables = null;
 
             var subscription = observables.Subscribe(StudentAdmittedValueHandler);
 
