@@ -9,9 +9,10 @@ namespace DerivingObservable
         {
             var observable = new ObservableNumbers();
 
-            observable.Subscribe(n => Console.WriteLine(n));
+            Action<int> action = n => Console.WriteLine(n);
+            observable.Subscribe(action);
 
-            observable.Unsubscribe(n => Console.WriteLine(n));
+            observable.Unsubscribe(action);
         }
     }
 }
