@@ -64,6 +64,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyRangeObservableThatDisregardsSubscriptionStatus.cs" />
     <Compile Include="MyUngracefullyExitingObservable.cs" />
     <Compile Include="MyThreadUnsafeRangeObservable.cs" />
     <Compile Include="MyDisposable.cs" />

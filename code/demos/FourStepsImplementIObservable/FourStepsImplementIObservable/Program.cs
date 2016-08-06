@@ -7,7 +7,7 @@ namespace FourStepsImplementIObservable
     {
         static void Main(string[] args)
         {
-            DoesNotReportErrorExitsUngracefully();
+            DemoDisregardsDisposedSubscription();
 
             Console.WriteLine("Press any key to exit the program...");
             Console.ReadKey();
@@ -24,6 +24,17 @@ namespace FourStepsImplementIObservable
             Console.WriteLine("Press any key to dispose the subscription.");
             Console.ReadKey();
             subscription.Dispose();
+        }
+
+        static void DemoDisregardsDisposedSubscription()
+        {
+            var observable = new MyRangeObservableThatDisregardsSubscriptionStatus(5, 8);
+
+            var observer = new MyObserver<int>();
+
+            var subscription = observable.Subscribe(observer);
+            subscription.Dispose();
+            Console.WriteLine("The subscription has been disposed but we're still receiving values...");
         }
 
         static void ObserverBaseMitigatesContractViolation1()
