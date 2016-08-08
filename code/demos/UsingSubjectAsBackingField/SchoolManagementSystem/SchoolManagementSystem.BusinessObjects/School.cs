@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reactive.Subjects;
 using System.Threading;
-using System.Reactive.Linq;
 
 namespace SchoolManagementSystem
 {
@@ -21,7 +20,7 @@ namespace SchoolManagementSystem
 
             _numberOfStudentsAdmitted = 0;
 
-            _subject = new ReplaySubject<Student>();
+            _subject = new /*Replay*/ Subject<Student>();
         }
 
         public void AdmitStudent(Student student)
@@ -34,6 +33,7 @@ namespace SchoolManagementSystem
                 if (_numberOfStudentsAdmitted == _maxNumberOfSeats)
                 {
                     _subject.OnCompleted();
+                    return;
                 }
 
                 Interlocked.Increment(ref _numberOfStudentsAdmitted);

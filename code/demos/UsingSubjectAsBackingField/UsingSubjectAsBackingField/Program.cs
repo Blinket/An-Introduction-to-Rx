@@ -10,17 +10,20 @@ namespace UsingSubjectAsBackingField
         {
             var school = new School("School 1", 2);
 
-            var subscription = school.Students.Subscribe(
-                Console.WriteLine, 
-                () => Console.WriteLine("No more students can be admitted. Seats are full."));
+            var subscription1 = school.Students.Subscribe(
+                v => Console.WriteLine($"1> {v}"), 
+                () => Console.WriteLine("1> No more students can be admitted. Seats are full.\n"));
 
             school.AdmitStudent(Student.CreateRandom());
             school.AdmitStudent(Student.CreateRandom());
             school.AdmitStudent(Student.CreateRandom());
 
-            Console.WriteLine("Press any key to unsubscribe and exit the program...");
+            var subscription2 = school.Students.Subscribe(v => Console.WriteLine($"2> {v}"), 
+                () => Console.WriteLine("2> Seats full.\n"));
+
+            Console.WriteLine("\nPress any key to unsubscribe and exit the program...");
             Console.ReadKey();
-            subscription.Dispose();
+            subscription1.Dispose();
         }
     }
 }

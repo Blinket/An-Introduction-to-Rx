@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Threading;
+using System.Linq;
 
 namespace FourStepsUsingSubject
 {
@@ -10,7 +11,7 @@ namespace FourStepsUsingSubject
     {
         static void Main(string[] args)
         {
-            Demo2();
+            Demo6();
 
             Console.WriteLine("Press any key to exit the program...");
             Console.ReadKey();
@@ -53,6 +54,133 @@ namespace FourStepsUsingSubject
             s3.Dispose();
             s4.Dispose();
             s5.Dispose();
+        }
+
+        static void Demo3()
+        {
+            var subject = new Subject<int>();
+
+            subject.Subscribe(value => PrintToConsole<int>("Sub 1", value),
+                e => Console.WriteLine(e), 
+                () => Console.WriteLine("Observation completed by first subscriber"));
+
+
+            subject.Subscribe(n => { throw new Exception("Oops!"); }, 
+                e => Console.WriteLine(e), 
+                () => { throw new Exception("Oops!"); });
+
+            subject.Subscribe(value => PrintToConsole<int>("Sub 3", value),
+                e => Console.WriteLine(e), 
+                () => Console.WriteLine("Observation completed by third subscriber"));
+            
+            for(int i = 0; i < 10; i++)
+                subject.OnNext(i);
+
+            subject.OnCompleted();
+        }
+
+        static void Demo4()
+        {
+            var observable = Observable
+                .Generate<int, int>(0, i => i < 10, i => i + 1, i => i);
+
+            observable.Subscribe(value => PrintToConsole<int>("Sub 1", value),
+                e => Console.WriteLine(e),
+                () => Console.WriteLine("Observation completed by first subscriber"));
+
+            observable.Subscribe(value => 
+            {
+                PrintToConsole<int>("Sub 2", value);
+                if (value == 2) throw new Exception("Oops!");
+            },
+            e => Console.WriteLine(e),
+            () => { throw new Exception("Oops!"); });
+
+            observable.Subscribe(value => PrintToConsole<int>("Sub 3", value),
+                e => Console.WriteLine(e),
+                () => Console.WriteLine("Observation completed by third subscriber"));
+        }
+
+        static void Demo5()
+        {
+            IObservable<int> observable = new Func<int>[] { () => 1, () => 2, () => { throw new Exception("Oops!"); }, () => 2 }
+                                        .ToObservable()
+                                        .Select(f => f());
+        
+            observable.Subscribe(value => PrintToConsole<int>("Sub 1", value),
+                e => Console.WriteLine(e),
+                () => Console.WriteLine("Observation completed by first subscriber"));
+
+            observable.Subscribe(value =>
+            {
+                PrintToConsole<int>("Sub 2", value);
+                if (value == 2) throw new Exception("Oops!");
+            },
+            e => Console.WriteLine(e),
+            () => { throw new Exception("Oops!"); });
+
+            observable.Subscribe(value => PrintToConsole<int>("Sub 3", value),
+                e => Console.WriteLine(e),
+                () => Console.WriteLine("Observation completed by third subscriber"));
+        }
+
+        static void Demo6()
+        {
+            var subject = new Subject<int>();
+
+            subject.Subscribe(value => PrintToConsole<int>("Sub 1", value),
+                e => Console.WriteLine(e),
+                () => Console.WriteLine("Observation completed by Sub 1"));
+
+
+            subject.Subscribe(
+                n => 
+                {
+                    try
+                    {
+                        Console.WriteLine($"Sub 2: {n}");
+
+                        if (n == 2)
+                        {
+                            throw new Exception("Oops!");
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine($"Subscriber 2 caught an exception: {ex.Message}");
+                    }
+                },
+                e => Console.WriteLine(e),
+                () => 
+                {
+                    try
+                    {
+                        throw new Exception("Oops!");
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine($"The observation is complete. Subscriber 2 caught the error: {ex.Message}");
+                    }
+                });
+
+            subject.Subscribe(value => PrintToConsole<int>("Sub 3", value),
+                e => Console.WriteLine(e),
+                () => Console.WriteLine("Observation completed by Sub 3"));
+
+            for (int i = 0; i < 10; i++)
+                subject.OnNext(i);
+
+            subject.OnCompleted();
+        }
+
+        static void PrintToConsole<T>(string subscriberName, T value)
+        {
+            Console.WriteLine($"{subscriberName}: {value.ToString()}");
+        }
+
+        static void PrintToConsole(int number)
+        {
+            Console.WriteLine(number.ToString());
         }
 
         static void PrintToConsole(string message)
