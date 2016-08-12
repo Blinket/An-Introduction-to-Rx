@@ -11,12 +11,27 @@ namespace FourStepsUsingSubject
     {
         static void Main(string[] args)
         {
-            
+            Demo3();
+
             Console.WriteLine("Press any key to exit the program...");
             Console.ReadKey();
         }
 
         static void Demo1()
+        {
+            var subject = new Subject<int>();
+
+            var subscription = subject.Subscribe(Console.WriteLine);
+
+            subject.OnNext(1);
+            subject.OnNext(2);
+
+            subscription.Dispose();
+
+            subject.OnNext(3);
+        }
+
+        static void Demo2()
         {
             // Using a subject as an observer only. Nothing happens because
             // the default _observer is a NopObserver<T>.Instance, which has
@@ -30,20 +45,21 @@ namespace FourStepsUsingSubject
             subscription.Dispose();
         }
 
-        static void Demo2()
+        static void Demo3()
         {
             // Using a subject as a broadcast or relay service
             // That is, a mediator that subscribes to an observable
             // and then relays its values to its observers
             var subject = new Subject<string>();
 
+            var o1 = new[] { "Hello", "World" }.ToObservable();
+
+            var s4 = o1.Subscribe(subject);
+
             var s1 = subject.Subscribe(v => Program.PrintToConsole("Sub 1", v));
             var s2 = subject.Subscribe(v => Program.PrintToDebugWindow("Sub 2", v));
             var s3 = subject.Subscribe(v => Program.PrintToConsoleSlowly("Sub 3", v));
 
-            var o1 = new[] { "Hello", "World" }.ToObservable();
-            
-            var s4 = o1.Subscribe(subject);
             
             Console.WriteLine("\nPress any key to dispose all subscriptions.");
             s1.Dispose();
@@ -52,7 +68,7 @@ namespace FourStepsUsingSubject
             s4.Dispose();
         }
 
-        static void Demo3()
+        static void Demo4()
         {
             // Using a subject as a broadcast or relay service
             // That is, a mediator that subscribes to many observables
@@ -77,7 +93,7 @@ namespace FourStepsUsingSubject
             s5.Dispose();
         }
 
-        static void Demo4()
+        static void Demo5()
         {
             var subject = new Subject<int>();
 
@@ -104,7 +120,7 @@ namespace FourStepsUsingSubject
             subject.OnCompleted();
         }
 
-        static void Demo5()
+        static void Demo6()
         {
             var observable = Observable
                 .Generate<int, int>(0, i => i < 10, i => i + 1, i => i);
@@ -126,7 +142,7 @@ namespace FourStepsUsingSubject
                 () => Console.WriteLine("Observation completed by third subscriber"));
         }
 
-        static void Demo6()
+        static void Demo7()
         {
             IObservable<int> observable = new Func<int>[] 
             {
@@ -157,7 +173,7 @@ namespace FourStepsUsingSubject
                 () => Console.WriteLine("Observation completed by third subscriber"));
         }
 
-        static void Demo7()
+        static void Demo8()
         {
             var subject = new Subject<int>();
 
